@@ -1,9 +1,9 @@
+import React from "react";
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 
 const Expenses = (props) => {
-  console.log(props.ExpenseItem);
   return (
     <Card className="expenses">
       <ExpenseItem
