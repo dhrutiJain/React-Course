@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./ExpenseForm.css";
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enterTitle, setEnterTitle] = useState("");
   const [enterAmount, setEnterAmount] = useState("");
   const [enterDate, setEnterDate] = useState("");
@@ -49,7 +49,9 @@ const ExpenseForm = () => {
       amount: enterAmount,
       date: new Date(enterDate),
     };
-    console.log(expenseData);
+    // console.log(expenseData);
+
+	props.onSaveExpenseData(expenseData); // passed through newExpense parent-child using props
     setEnterTitle("");
     setEnterDate("");
     setEnterAmount("");
@@ -64,7 +66,6 @@ const ExpenseForm = () => {
             type="text"
             value={enterTitle}
             onChange={titleChangeHandler}
-            defaultValue="dj"
           />
         </div>
         <div className="new-expense__control">
@@ -89,6 +90,7 @@ const ExpenseForm = () => {
         </div>
       </div>
       <div className="new-expense__actions">
+		<button type="button" onClick={props.onCancel}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
