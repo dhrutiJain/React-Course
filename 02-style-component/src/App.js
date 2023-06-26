@@ -21,6 +21,7 @@ const App = () => {
   const deleteItemHandler = goalId => {
     setCourseGoals(prevGoals => {
       const updatedGoals = prevGoals.filter(goal => goal.id !== goalId);
+      console.log(prevGoals,updatedGoals,goalId)
       return updatedGoals;
     });
   };
