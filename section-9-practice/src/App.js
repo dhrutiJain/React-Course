@@ -11,7 +11,7 @@ function App() {
     console.log(userInput)
     }
     const yearlyData = []; // per-year results
-
+	console.log(yearlyData)
     if(userInput){
       let currentSavings = +userInput.currentSaving; 
     // feel free to change the shape of this input object!
@@ -42,7 +42,7 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {!userInput && <p>No Investment Calculate Yet</p>}
       {/* Show fallback text if no data is available */}
-       {userInput && <InvestmentResults ></InvestmentResults>}
+       {userInput && <InvestmentResults dataOption={yearlyData} initialInvestment = {userInput.currentSaving}></InvestmentResults>}
       
     </div>
   );
