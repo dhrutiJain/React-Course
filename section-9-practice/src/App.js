@@ -33,6 +33,7 @@ function App() {
     // do something with yearlyData ...
     }
   };
+  
 
   return (
     <div>
@@ -40,7 +41,7 @@ function App() {
       <CalculatorForm onCalculate={calculateHandler}></CalculatorForm>
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
-      {!userInput && <p>No Investment Calculate Yet</p>}
+      {!userInput && <p style={{textAlign:'center'}}>No Investment Calculate Yet</p>}
       {/* Show fallback text if no data is available */}
        {userInput && <InvestmentResults dataOption={yearlyData} initialInvestment = {userInput.currentSaving}></InvestmentResults>}
       
